@@ -1,0 +1,16 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Firmware build output
+nodes/kitchen-node/build/
+nodes/kitchen-node/build-*/
+nodes/kitchen-node/.pio/
+
+# Local hardware credentials
+nodes/kitchen-node/config.h
+
+# OS/editor
+.DS_Store
+*.swp

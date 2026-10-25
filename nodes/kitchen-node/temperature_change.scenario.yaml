@@ -1,0 +1,8 @@
+name: Kitchen temperature follows DHT22
+version: 1
+steps:
+  - set-control:
+      part-id: dht
+      control: temperature
+      value: 31
+  - wait-serial: '"temp":31'

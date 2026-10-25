@@ -1,0 +1,135 @@
+{
+  "ambient_temperature": 20.5,
+  "floors": {
+    "0": {
+      "display_name": "Ground Floor",
+      "temperature_offset": 0.0
+    },
+    "1": {
+      "display_name": "First Floor",
+      "temperature_offset": 1.5
+    }
+  },
+  "rooms": [
+    {
+      "id": "living-room",
+      "display_name": "Living Room",
+      "floor": 0,
+      "rect": [20, 40, 210, 180],
+      "doors": [
+        {"id": "living-room-kitchen", "position": [250, 130], "rooms": ["living-room", "kitchen"]},
+        {"id": "living-room-hallway", "position": [125, 240], "rooms": ["living-room", "hallway"]}
+      ],
+      "furniture": []
+    },
+    {
+      "id": "kitchen",
+      "display_name": "Kitchen",
+      "floor": 0,
+      "rect": [250, 40, 210, 180],
+      "doors": [
+        {"id": "living-room-kitchen", "position": [250, 130], "rooms": ["living-room", "kitchen"]},
+        {"id": "kitchen-dining-room", "position": [480, 130], "rooms": ["kitchen", "dining-room"]}
+      ],
+      "furniture": []
+    },
+    {
+      "id": "dining-room",
+      "display_name": "Dining Room",
+      "floor": 0,
+      "rect": [480, 40, 150, 180],
+      "doors": [
+        {"id": "kitchen-dining-room", "position": [480, 130], "rooms": ["kitchen", "dining-room"]}
+      ],
+      "furniture": []
+    },
+    {
+      "id": "hallway",
+      "display_name": "Hallway",
+      "floor": 0,
+      "rect": [20, 240, 250, 260],
+      "doors": [
+        {"id": "living-room-hallway", "position": [125, 240], "rooms": ["living-room", "hallway"]},
+        {"id": "hallway-study", "position": [290, 370], "rooms": ["hallway", "study"]},
+        {"id": "hallway-landing-stairs", "position": [145, 250], "rooms": ["hallway", "landing"]}
+      ],
+      "furniture": []
+    },
+    {
+      "id": "study",
+      "display_name": "Study",
+      "floor": 0,
+      "rect": [290, 240, 170, 260],
+      "doors": [
+        {"id": "hallway-study", "position": [290, 370], "rooms": ["hallway", "study"]}
+      ],
+      "furniture": []
+    },
+    {
+      "id": "landing",
+      "display_name": "Landing",
+      "floor": 1,
+      "rect": [20, 40, 180, 160],
+      "doors": [
+        {"id": "landing-bedroom", "position": [220, 120], "rooms": ["landing", "bedroom"]},
+        {"id": "landing-bedroom-2", "position": [440, 120], "rooms": ["landing", "bedroom-2"]},
+        {"id": "landing-bathroom", "position": [220, 315], "rooms": ["landing", "bathroom"]},
+        {"id": "hallway-landing-stairs", "position": [110, 200], "rooms": ["hallway", "landing"]}
+      ],
+      "furniture": []
+    },
+    {
+      "id": "bedroom",
+      "display_name": "Bedroom",
+      "floor": 1,
+      "rect": [220, 40, 200, 160],
+      "doors": [
+        {"id": "landing-bedroom", "position": [220, 120], "rooms": ["landing", "bedroom"]}
+      ],
+      "furniture": []
+    },
+    {
+      "id": "bedroom-2",
+      "display_name": "Bedroom 2",
+      "floor": 1,
+      "rect": [440, 40, 190, 160],
+      "doors": [
+        {"id": "landing-bedroom-2", "position": [440, 120], "rooms": ["landing", "bedroom-2"]}
+      ],
+      "furniture": []
+    },
+    {
+      "id": "bathroom",
+      "display_name": "Bathroom",
+      "floor": 1,
+      "rect": [220, 230, 200, 200],
+      "doors": [
+        {"id": "landing-bathroom", "position": [220, 315], "rooms": ["landing", "bathroom"]}
+      ],
+      "furniture": []
+    }
+  ],
+  "doors": [
+    {"id": "living-room-kitchen", "rooms": ["living-room", "kitchen"], "position": [250, 130], "orientation": "vertical"},
+    {"id": "kitchen-dining-room", "rooms": ["kitchen", "dining-room"], "position": [480, 130], "orientation": "vertical"},
+    {"id": "living-room-hallway", "rooms": ["living-room", "hallway"], "position": [125, 240], "orientation": "horizontal"},
+    {"id": "hallway-study", "rooms": ["hallway", "study"], "position": [290, 370], "orientation": "vertical"},
+    {"id": "landing-bedroom", "rooms": ["landing", "bedroom"], "position": [220, 120], "orientation": "vertical"},
+    {"id": "landing-bedroom-2", "rooms": ["landing", "bedroom-2"], "position": [440, 120], "orientation": "vertical"},
+    {"id": "landing-bathroom", "rooms": ["landing", "bathroom"], "position": [220, 315], "orientation": "horizontal"}
+  ],
+  "stairs": {
+    "id": "hallway-landing-stairs",
+    "from": "hallway",
+    "to": "landing",
+    "from_position": [145, 250],
+    "to_position": [110, 200],
+    "traversal_time": 3.0,
+    "battery_cost": 3.0
+  },
+  "charging_dock": {
+    "room": "hallway",
+    "position": [55, 455],
+    "charge_rate": 18.0
+  }
+}

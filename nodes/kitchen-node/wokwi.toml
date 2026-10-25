@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "build/kitchen-node.ino.bin"
+elf = "build/kitchen-node.ino.elf"

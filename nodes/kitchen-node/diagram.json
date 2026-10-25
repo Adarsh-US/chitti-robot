@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "author": "Jarvis Home",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp32", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht", "top": -40, "left": 300, "attrs": { "temperature": "24" } },
+    { "type": "wokwi-led", "id": "fan_led", "top": 170, "left": 300, "attrs": { "color": "blue", "label": "kitchen fan" } },
+    { "type": "wokwi-resistor", "id": "fan_resistor", "top": 150, "left": 200, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp32:3V3", "dht:VCC", "red", [] ],
+    [ "esp32:GND.1", "dht:GND", "black", [] ],
+    [ "esp32:D15", "dht:SDA", "green", [] ],
+    [ "esp32:D2", "fan_resistor:1", "green", [] ],
+    [ "fan_resistor:2", "fan_led:A", "green", [] ],
+    [ "fan_led:C", "esp32:GND.2", "black", [] ]
+  ],
+  "dependencies": {}
+}

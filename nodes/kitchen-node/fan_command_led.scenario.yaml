@@ -1,0 +1,11 @@
+name: Kitchen fan command and LED acknowledgement
+version: 1
+steps:
+  - wait-serial: "house/kitchen/temp"
+  - write-serial: "{\"ts\":1730000000.0,\"command\":\"fan_on\",\"room\":\"kitchen\"}\n"
+  - wait-serial: "house/kitchen/fan"
+  - wait-serial: '"fan":true'
+  - expect-pin:
+      part-id: esp32
+      name: D2
+      value: 1

@@ -1,0 +1,4 @@
+name: Kitchen temperature output
+version: 1
+steps:
+  - wait-serial: "house/kitchen/temp"
